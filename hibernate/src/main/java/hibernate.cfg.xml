@@ -9,15 +9,19 @@
         <property name="hibernate.connection.username">hr</property>
         <property name="hibernate.dialect">org.hibernate.dialect.Oracle8iDialect</property>
         <property name="hibernate.search.autoregister_listeners">true</property>
-        <property name="hibernate.validator.apply_to_ddl">false</property>
         <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.validator.apply_to_ddl">false</property>
         <mapping class="entidades.Departments"/>
         <mapping class="entidades.Regions"/>
         <mapping class="entidades.Countries"/>
+        <mapping class="entidades.HibernateSequence"/>
         <mapping class="entidades.Jobs"/>
+        <mapping class="entidades.RegistroSecuencia"/>
+        <mapping class="entidades.Registrotabla"/>
         <mapping class="entidades.Locations"/>
         <mapping class="entidades.Employees"/>
         <mapping class="entidades.EmpDetailsView"/>
         <mapping class="entidades.JobHistory"/>
+        <mapping class="entidades.RegistroUuid"/>
     </session-factory>
 </hibernate-configuration>

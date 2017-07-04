@@ -16,8 +16,11 @@ import org.hibernate.service.ServiceRegistry;
 import entidades.Countries;
 import entidades.Employees;
 import entidades.Regions;
+import entidades.RegistroSecuencia;
+import entidades.RegistroUuid;
+import entidades.Registrotabla;
 
-public class MainHibernate3 {
+public class MainHibernate6 {
 
 	public static void main(String[] args) {
 		
@@ -33,17 +36,13 @@ public class MainHibernate3 {
 		
 		try {
 			tx = sesion.beginTransaction();
-			Employees emp_aux = null;
-			BigDecimal salario_antiguo = null;
-			BigDecimal salario_nuevo = null;
+			Registrotabla r1 = new Registrotabla();
+			Registrotabla r2 = new Registrotabla();
+			Registrotabla r3 = new Registrotabla();
 			
-			for (int n_empleado = 100; n_empleado<=206; n_empleado++)
-			{
-				emp_aux = sesion.get(Employees.class, n_empleado);
-				salario_antiguo = emp_aux.getSalary();
-				salario_nuevo = salario_antiguo.multiply(new BigDecimal(1.07));
-				emp_aux.setSalary(salario_nuevo);
-			}
+			sesion.save(r1);
+			sesion.save(r2);
+			sesion.save(r3);
 			
 			tx.commit();
 		} catch (Exception e) {
