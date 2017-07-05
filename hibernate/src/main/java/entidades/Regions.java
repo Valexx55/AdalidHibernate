@@ -64,4 +64,23 @@ public class Regions implements java.io.Serializable {
 		this.countrieses = countrieses;
 	}
 
+	//sobreescribir el método equals
+	
+	@Override
+	public boolean equals(Object obj) {
+		boolean son_iguales = false;
+		Regions objeto_region = null;
+		
+			objeto_region = (Regions)obj;
+			if (this.getRegionId().equals(objeto_region.getRegionId()))
+			{
+				//vamos bien, al menos coinciden en ID
+				if (this.getRegionName().equals(objeto_region.getRegionName()))
+						{
+							son_iguales = true;
+						}
+			}
+		
+		return son_iguales;
+	}
 }

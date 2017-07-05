@@ -35,6 +35,7 @@ public class RegionesDAO {
 			sesion.close();
 		}
 		return funca;
+		//return true;
 	}
 
 	// READ
