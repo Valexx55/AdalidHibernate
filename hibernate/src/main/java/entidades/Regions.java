@@ -83,4 +83,13 @@ public class Regions implements java.io.Serializable {
 		
 		return son_iguales;
 	}
+	
+	@Override
+	public String toString() {
+		String str_dev = null;
+		
+			str_dev = this.regionName + " " + this.regionId.toString() + " "+ super.toString();
+		
+		return str_dev;
+	}
 }

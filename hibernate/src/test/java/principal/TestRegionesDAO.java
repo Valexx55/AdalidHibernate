@@ -46,23 +46,40 @@ public class TestRegionesDAO {
 	{
 		System.out.println("INICIO clase TEST @BeforeClass ");
 	}
-	
+	/*
 	@Test
 	public void testCreate ()
 	{	
 		System.out.println("Pasa por CREATE");
 		
 		Regions nueva_region = new Regions();
-		nueva_region.setRegionId(new BigDecimal(538));
+		nueva_region.setRegionId(new BigDecimal(900));
 		nueva_region.setRegionName("SALAMANCA");
 		
 		RegionesDAO regionesDAO = new RegionesDAO(sf);
 		regionesDAO.create(nueva_region);
 		
-		Regions region2 = regionesDAO.read(new BigDecimal(538));
+		Regions region2 = regionesDAO.read(new BigDecimal(900));
 		Assert.assertEquals(region2, nueva_region);
 		
+	}*/
+	@Test
+	public void testEquals ()
+	{	
+		//PROBAR SI EL MÉTODO EQUALS FUNCIONA :)
+		Regions region1 = new Regions();
+		region1.setRegionId(new BigDecimal(500));
+		region1.setRegionName("SORIAS");
+		
+		Regions region2 = region1;
+		
+		System.out.println("region 1 = " + region1.toString());
+		System.out.println("region 2 = " + region2.toString());
+		
+		boolean iguales = region1.equals(region2);
+		Assert.assertEquals(true, iguales);
 	}
+	
 	@Test
 	public void testRead ()
 	{	
