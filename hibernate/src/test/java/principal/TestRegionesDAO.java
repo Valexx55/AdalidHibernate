@@ -84,16 +84,37 @@ public class TestRegionesDAO {
 	public void testRead ()
 	{	
 		System.out.println("Pasa por READ");
+		RegionesDAO regions_dao = new RegionesDAO(sf);
+		//leo una región conocida y debe coincidir
+		Regions region_america = new Regions();
+		region_america.setRegionId(new BigDecimal(2));
+		region_america.setRegionName("Americas");
+		
+		Regions region_leida = regions_dao.read(new BigDecimal(2));
+		
+		Assert.assertEquals(region_america, region_leida);
+	
+		
 	}
 	@Test
 	public void testUpdate ()
 	{	
 		System.out.println("Pasa por UPDATE");
 	}
+	//http://192.168.1.54:9090/springbasics9/html/indexws.html
+	//https://github.com/Valexx55/2016Spring4
 	@Test
 	public void testDelete()
 	{	
 		System.out.println("Pasa por DELETE");
+		RegionesDAO regions_dao = new RegionesDAO(sf);
+		
+		Regions region_salamanca = regions_dao.read(new BigDecimal(700));//leo SALAMANCA
+		regions_dao.delete(region_salamanca);//borro Salamanca
+		
+		Regions region_salamanca2 = regions_dao.read(new BigDecimal(700));//intento leer Salamanca
+		Assert.assertNull(region_salamanca2);//no debería existir
+		
 	}
 
 	
