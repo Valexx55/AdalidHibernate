@@ -25,9 +25,6 @@ public class ConsultaJPA {
 		
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
-		/*Regions rg =  em.find(Regions.class, new BigDecimal(1));
-		System.out.println(rg);*/
-		//vamos  LEER TODOS LOS DEPARTAMENTOS
 		TypedQuery<Departments> query = em.createNamedQuery("Departments.todos", Departments.class);
 		List<Departments> ld = query.getResultList();
 		for (Departments d : ld)
